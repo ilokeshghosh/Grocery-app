@@ -5,19 +5,19 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-// let allowOrigins = [process.env.Cors_Origin, "http://localhost:5173"];
+let allowOrigins = [process.env.Cors_Origin];
 
-// app.use(
-//   cors({
-//     origin: function (origin, callback) {
-//       if (!origin || allowOrigins.includes(origin)) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not Allowed By CORS"));
-//       }
-//     },
-//   })
-// );
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not Allowed By CORS"));
+      }
+    },
+  })
+);
 
 app.use(
   express.json({

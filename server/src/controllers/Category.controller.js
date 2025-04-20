@@ -42,12 +42,7 @@ const updateCategory = asyncHandler(async (req, res) => {
   const categoryOwner = await Category.findById(categoryId);
   if (!categoryOwner) {
     throw new ApiError(404, "Category does not exist");
-  }
-  console.log("categoryId", categoryId);
-  console.log("name", name);
-  console.log("owner", owner);
-  console.log("categoryOwner", categoryOwner);
-
+  } 
   if (categoryOwner.owner.valueOf() === owner.valueOf()) {
     const category = await Category.findByIdAndUpdate(
       categoryId,

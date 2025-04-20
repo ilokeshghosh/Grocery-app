@@ -48,16 +48,14 @@ function Accounts() {
             />
 
             <div
-              className={`${
-                !isNotificationActive && "bg-transparent p-0 border-none"
-              } absolute border-2 bg-black p-6 rounded-full border-green-400 transition-all ease-linear duration-500`}
+              className={`${!isNotificationActive && "bg-transparent p-0 border-none"
+                } absolute border-2 bg-black p-6 rounded-full border-green-400 transition-all ease-linear duration-500`}
             ></div>
 
             {/* notification container wrapper */}
             <div
-              className={`${
-                !isNotificationActive && "h-0 w-0 border-none bg-transparent "
-              } absolute top-12 -left-24 h-[200px] w-[200px] border-2 bg-black/70 text-green-400 rounded-lg p-2 border-green-400 transition-all ease-linear duration-500`}
+              className={`${!isNotificationActive && "h-0 w-0 border-none bg-transparent "
+                } absolute top-12 -left-24 h-[200px] w-[200px] border-2 bg-black/70 text-green-400 rounded-lg p-2 border-green-400 transition-all ease-linear duration-500`}
             ></div>
           </div>
 
@@ -75,7 +73,7 @@ function Accounts() {
       {/* body wrapper*/}
       <div className="w-full h-[90%]">
         {/* body container */}
-        <div className="w-[90%] mx-auto  h-full"></div>
+        <div className="w-[90%] mx-auto  h-full border"></div>
       </div>
     </div>
   );

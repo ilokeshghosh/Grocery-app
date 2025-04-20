@@ -6,6 +6,7 @@ import {
   MdShoppingCart,
   MdCreditCard,
   MdSettings,
+  FiBox
 } from "../icons";
 import { Link } from "react-router-dom";
 import { MobileNavContext, PcNavContext } from "./UserLayout";
@@ -25,6 +26,20 @@ function MobileNav() {
   const { isMobileNavActive, setIsMobileNavActive } =
     useContext(MobileNavContext);
 
+  const [userRole, setUserRole] = useState('USER');
+
+  useEffect(() => {
+    try {
+      const localStorageUserData = localStorage.getItem('userData')
+      const parsedLocalStorageUserData = JSON.parse(localStorageUserData);
+      setUserRole(parsedLocalStorageUserData.role)
+      // console.log('parsedLocalStorageUserData',parsedLocalStorageUserData)
+    } catch (error) {
+      console.log("Error is ", Error);
+
+    }
+  }, [])
+
   return (
     <div className="w-full h-auto p-2 ">
       <ul className="flex flex-col w-full  justify-center items-center gap-4 py-3 ">
@@ -43,19 +58,20 @@ function MobileNav() {
           </Link>
         </li>
 
-        {/* transaction */}
+        {/* Products */}
         <li className="w-full  flex justify-end items-center ">
-          <Link
+          {userRole == 'ADMIN' ? <Link
             onClick={() => {
               setIsMobileNavActive(!isMobileNavActive);
               setMenu(1);
             }}
-            to={"/user/transaction"}
+            to={"/user/products"}
             className="flex items-center justify-start gap-1 w-[65%]"
           >
-            <TbTransactionRupee />
-            <h3>Transaction</h3>
-          </Link>
+            <FiBox />
+            <h3>Products</h3>
+          </Link> : null}
+
         </li>
 
         {/* Accounts */}

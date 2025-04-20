@@ -39,9 +39,8 @@ function UserLayout() {
         </div>
 
         <div
-          className={`z-[999] w-full h-full md:hidden inline  ${
-            !isMobileNavActive && "-translate-x-[100%]"
-          }  bg-white absolute p-4 transition-all ease-linear duration-500`}
+          className={`z-[999] w-full h-full md:hidden inline  ${!isMobileNavActive && "-translate-x-[100%]"
+            }  bg-white absolute p-4 transition-all ease-linear duration-500`}
         >
           {/* hamburger and logo container */}
           <div className="flex justify-start items-center">

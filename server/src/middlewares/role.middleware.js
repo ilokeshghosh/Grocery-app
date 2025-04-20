@@ -6,7 +6,7 @@ function RoleCheck(role) {
     if (req.user && req.user.role === role) {
       next();
     } else {
-      throw new ApiError(401, "Your are note access this page");
+      throw new ApiError(401, "Your are not access this page");
     }
     // next();
   };

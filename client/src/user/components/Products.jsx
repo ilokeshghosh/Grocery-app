@@ -7,7 +7,7 @@ import {
 } from "../../icons";
 import { Link } from "react-router-dom";
 import { MobileNavContext } from "../UserLayout";
-function Transaction() {
+function Products() {
   const { isMobileNavActive, setIsMobileNavActive } =
     useContext(MobileNavContext);
   const [isNotificationActive, setIsNotificationActive] = useState(false);
@@ -83,4 +83,4 @@ function Transaction() {
   );
 }
 
-export default Transaction;
+export default Products;

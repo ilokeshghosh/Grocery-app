@@ -15,13 +15,13 @@ const router = Router();
 //SECURED ROUTES
 router.use(verifyJWT);
 router.route("/all-category").get(getAllCategories);
-router.route("/category-id").get(getCategoryById);
+router.route("/category-id/:categoryId").get(getCategoryById);
 
 router
   .route("/add-category")
   .post(RoleCheck("ADMIN"), createCategory)
-  .patch(updateCategory)
-  .delete(deleteCategory);
+// .patch(updateCategory)
+// .delete(deleteCategory);
 
-
+router.route('/add-category/:categoryId').patch(updateCategory).delete(deleteCategory)
 export default router;

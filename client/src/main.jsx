@@ -9,7 +9,7 @@ import { Login, Signup, Product, Cart } from "./pages/index.js";
 import UserLayout from "./user/UserLayout.jsx";
 import {
   Dashboard,
-  Transaction,
+  Products,
   Accounts,
   Orders,
   Cards,
@@ -48,8 +48,8 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/user/transaction",
-        element: <Transaction />,
+        path: "/user/products",
+        element: <Products />,
       },
       {
         path: "/user/accounts",
